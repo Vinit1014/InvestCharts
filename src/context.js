@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState } from "react";
-const url = "https://yh-finance.p.rapidapi.com/stock/v2/get-balance-sheet?";
-const urlSearch = "https://apidojo-yahoo-finance-v1.p.rapidapi.com/auto-complete?";
+const url = process.env.REACT_APP_URL;
+const urlSearch = process.env.REACT_APP_URL_SEARCH;
 
 const AppContext = React.createContext();
 const AppProvider = ({ children }) => {
