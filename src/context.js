@@ -86,9 +86,7 @@ const AppProvider = ({ children }) => {
       method: "GET",
       headers: {
         "X-RapidAPI-Key": process.env.REACT_APP_KEY_DATA,
-        // "X-RapidAPI-Key": "4454ddda2amshd548efebdb9d54bp109d09jsnd30e0b14da7e",
         "X-RapidAPI-Host": process.env.REACT_APP_HOST_DATA,
-        // "X-RapidAPI-Host": "yh-finance.p.rapidapi.com",
       },
     };
     let timerOut = setTimeout(() => {
@@ -115,9 +113,7 @@ const AppProvider = ({ children }) => {
       method: "GET",
       headers: {
         "X-RapidAPI-Key": process.env.REACT_APP_KEY_DATA,
-        // "X-RapidAPI-Key": "4454ddda2amshd548efebdb9d54bp109d09jsnd30e0b14da7e",
         "X-RapidAPI-Host": process.env.REACT_APP_HOST_DATA,
-        // "X-RapidAPI-Host": "yh-finance.p.rapidapi.com",
       },
     };
 
