@@ -1,0 +1,26 @@
+.Graph{
+    width: 30%;
+    height: 30%;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 10px;
+}
+
+.Graphchild{
+    margin: 0px 30px;
+    height: 190px;
+    padding: 20px;
+    flex: 1;
+}
+
+.Graph h3{
+    margin: 75px 0px;
+}
+
+.enclosingDiv{
+    margin: 10px 17px;
+    /* border: 2px solid red; */
+    border-radius: 10px;
+    background-color: #fbe6e6;
+}

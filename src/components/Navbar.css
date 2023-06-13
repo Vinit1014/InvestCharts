@@ -1,0 +1,31 @@
+.navbar{
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #FF9292;
+    /* border: 2px solid red; */
+    padding: 10px;
+    height: 60px;
+}
+
+.navbar-links{
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+
+}
+
+#navbarSticky{
+    top: 0;
+}
+
+.navbar-links li a {
+    color: #333;
+    padding: 4px 4px ;
+    text-decoration: none;
+}
+
+.navbar-links li a:hover {
+    color: #555;
+}
