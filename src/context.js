@@ -17,7 +17,7 @@ const AppProvider = ({ children }) => {
   const [retainedEarnings, setRetainedEarnings] = useState(null);
   const [isLoading, setisLoading] = useState(false);
   const [news, setNews] = useState([]);
-
+  const [showError,setShowError] = useState(false);
 
   useEffect(() => {
     const balanceSheetStatement = stockData[1];
@@ -59,6 +59,7 @@ const AppProvider = ({ children }) => {
       try {
         const res = await fetch(url, options);
         const data = await res.json();
+        
         console.log(showYearly);
         if (showYearly === true) {
           // setStockData(data.balanceSheetHistory.balanceSheetStatements);
@@ -79,6 +80,7 @@ const AppProvider = ({ children }) => {
         }
       } catch (error) {
         console.log(error);
+        
       }
     };
 
@@ -100,13 +102,15 @@ const AppProvider = ({ children }) => {
       try {
         const res = await fetch(urlSearch, options2);
         const data = await res.json();
+        setShowError(false);
         console.log(data);
         setSearch(data.quotes[0].symbol);
         setFullname(data.quotes[0].shortname);
         setisLoading(false);
         setNews(data.news);
       } catch (error) {
-        console.log(error);
+        alert("Not available");
+        setShowError(true);
       }
     };
     const options2 = {
@@ -122,7 +126,7 @@ const AppProvider = ({ children }) => {
       setisLoading(false);
     }, 800);
     return () => clearTimeout(timerOut);
-  }, [query,setFullname,setNews]);
+  }, [query,setFullname,setNews,setShowError]);
 
   useEffect(() => {
     console.log(search);
@@ -152,6 +156,7 @@ const AppProvider = ({ children }) => {
         setNews,
         setSearch,
         setFullname,
+        showError
       }}
     >
       {children}

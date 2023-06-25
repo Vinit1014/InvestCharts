@@ -18,21 +18,22 @@ import CarouselNews from "./components/CarouselNews";
 ChartJS.register(LineElement, CategoryScale, LinearScale, PointElement, Legend);
 
 const Home = () => {
-  const {fullname} = useGlobalContext();
+  const {fullname,showError} = useGlobalContext();
   return (
     <>
       <Navbar/>
       <Search />
+      {showError ? <p>Not available. Search a valid name</p> : 
+      <>
       <h1>{fullname}</h1>
       <RadioButton/>
       <MyChart/>
       <CarouselNews/>
-      {/* <MyChart 
-        details="totalCurrentLiabilities"
-      /> */}
-      {/* <div className="Graph">
-        <Line data={data} options={options}></Line>
-      </div> */}
+      </>
+      }
+    
+  
+      
     </>
   );
 };
